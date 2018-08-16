@@ -1,0 +1,36 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #050824;
+}
+
+.container {
+  max-width: 930px;
+}
+
+header {
+  background-color: #050824;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  font-weight: 100;
+}
+
+a {
+  color: #3e63e5;
+  font-weight: 600;
+}
+
+a:hover {
+  color: #3e63e5;
+}
+
+.text-primary {
+  color: #3e63e5;
+}
+
+.text-secondary {
+  color: #DE176C;
+}
