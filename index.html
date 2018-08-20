@@ -16,33 +16,55 @@
     <header class="py-5">
       <div class="container">
         <h1 class="display-3 text-center text-primary">Cloud Native Buildpacks</h1>
-        <p class="subtitle mt-3">Opinionated Build for Cloud Native Computing</p>
+        <p class="subtitle mt-3">Buildpacks for Every Platform</p>
       </div>
     </header>
     <div class="container">
       <section class="pt-5">
-        <h2 class="h3">What are Cloud Native Buildpacks?</h2>
-        <p>An open source build tool that allows you to transform their source code into a OCI compliant image that can run on any cloud platform. This allows you to focus entirely on your application code compared to the operational overhead you encounter when building applications with Dockerfiles.</p>
+        <h2 class="h3">What are Buildpacks?</h2>
+        <p>Buildpacks are pluggable, modular tools that translate source code into container-ready artifacts such as OCI images. They replace Dockerfiles in the app development lifecycle with a higher level of abstraction.</p>
+        <p>Buildpacks:</p>
+        <ul>
+          <li>Provide a balance of control that reduces the operational burden on developers and supports enterprise operators who manage apps at scale.</li>
+          <li>Ensure that apps meet security and compliance requirements without developer intervention.</li>
+          <li>Provide automated delivery of both OS-level and application-level dependency upgrades, efficiently handling day-2 app operations that are often difficult to manage with Dockerfiles.</li>
+          <li>Rely on compatibility guarantees (such as OS package ABI-compatibility, or JVM version compatibility) to safely apply patches without rebuilding artifacts and without changing application behavior.</li>
+        </ul>
+
+        <p>Buildpacks were first conceived by Heroku in 2012. Since then, they have been adopted by Cloud Foundry and other PaaS such as Gitlab, Knative, Deis, Dokku, and Drie.<p>
+
+        <p><b>Cloud Native Buildpacks</b> are a new effort initiated by Pivotal and Heroku in January 2018. Cloud Native Buildpacks aim to unify the buildpack ecosystems with a platform-to-buildpack contract that is well-defined and that incorporates learnings from maintaining production-grade buildpacks for years at both Pivotal and Heroku, the largest contributors to the buildpack ecosystem.</p>
+
+        <p>Cloud Native Buildpacks embrace modern container standards, such as the OCI image format. They take advantage of the latest capabilities of these standards, such as remote image layer rebasing on Docker API v2 registries.</p>
       </section>
-      <section class="pt-5">
-        <h2 class="h3">How are these different than current Buildpacks and Dockerfiles</h2>
-        <p>Cloud Native Buildpacks incorporate learnings from years of operating buildpacks in production at Pivotal and Heroku.  They combine the <a href="https://en.wikipedia.org/wiki/Application_binary_interface#Complete_ABIs" target="blank">ABI compatibility</a> and Day 2 operational scale that you currently get with the buildpacks you use on Cloud Foundry and Heroku, with the ability remotely rebase image layers in a repository like you can with a Dockerfile.</p>
-        <p>Now instead of having to rebuild your entire image from the base layer when a critical security vulnerability is discovered (like with a Dockerfile), Cloud Native Buildpacks can seamlessly swap out the base layer via image layer repository manipulation without have to rebuild the entire image.  Since the images produced by Cloud Native Buildpacks are OCI compliant, you can now use build packs on any cloud platform that can run this image format.</p>
-      </section>
+
       <section class="pt-5">
         <h2 class="h3">
           Getting Started with Cloud Native Buildpacks
         </h2>
         <h3 class="h4">Download</h3>
-        <p>Please make sure you have the following dependencies installed on your machine.</p>
+        <p>Until cloud platforms such as Heroku and Cloud Foundry incorporate the [Buildpack v3 Lifecycle](link), the fastest way to try Cloud Native Buildpacks is via the `pack` CLI, which integrates with your local Docker daemon.</p>
 
-        <p><a class="text-danger" href="" target="blank">Docker Community Edition</a></p>
-
+        <p>Please make sure you have <a href="https://store.docker.com/search?type=edition&offering=community" target="blank">Docker Community Edition</a> installed on your machine.</p>
         <p>Next you will need to download 'pack' - the Cloud Native Buildpack CLI.</p>
-
         <pre class="code-block"><code>$ brew install pack</code></pre>
-
         <p>This will allow you to use Cloud Native Buildpacks in your local environment.</p>
+        <p><b>Please note:</b>This project just started! Very few buildpacks currently support the Buildpack v3 API. By default, the CLI only includes a <div class="text-danger">[single sample v3 buildpack for Node.js](link)</div>. To address this, we plan to support both the Heroku (v2a) and Cloud Foundry (v2b) buildpack APIs in the CLI as well. Until then, this CLI is only useful for developing new v3 buildpacks, and for porting existing buildpacks to the v3 API.</p>
+
+        <h3 class="h4">Building your application</h3>
+        <p>Let’s get started building your first application with Cloud Native Buildpacks.</p>
+        <p>Build your application by passing in your application source code directory and image name to the <code class="highlight">pack build</code> command.</p>
+
+        <pre class="code-block"><code>$ pack build --dir &lt;path to source code&gt; --name &lt;repository name&gt;:&lt;image tag (optional)&gt;</code></pre>
+
+        <p>Upon a successful build, you will see your image in your local Docker daemon.</p>
+
+        <h3 class="h4">Running Your Application</h3>
+        <p>Now that you have successfully built your OCI image using Cloud Native Buildpacks you can run your application using the Docker CLI.</p>
+
+        <pre class="code-block"><code>$ docker run &lt;image tag&gt;</code></pre>
+
+        <p>Congratulations! You have now successfully built and run your first application with Cloud Native Buildpacks.</p>
       </section>
 
     </div>
