@@ -35,15 +35,33 @@ a:hover {
   color: #3e63e5;
 }
 
+b, strong {
+  font-style: 700;
+}
+
+h2, .h2 {
+  color: #E9086B
+}
+
+h3, .h3 {
+  color: #050824;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
 .text-primary {
   color: #3e63e5;
 }
 
 .text-secondary {
-  color: #DE176C;
+  color: #E9086B;
 }
 
-pre code {
+.text-dark {
+  color: #050824;
+}
+
+pre code, .text-note {
   color: #777;
 }
 
