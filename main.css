@@ -47,6 +47,12 @@ pre code {
   color: #777;
 }
 
+code.highlight {
+  color: #3e63e5;
+  font-weight: 600;
+  background-color: #eee;
+}
+
 /***
 Others
 ***/
