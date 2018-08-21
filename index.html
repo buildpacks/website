@@ -58,7 +58,7 @@
         <h3 class="mt-5">Running Your Application</h3>
         <p>Now that you have successfully built your OCI image using Cloud Native Buildpacks you can run your application using the Docker CLI.</p>
 
-        <pre class="code-block"><code>$ docker run &lt;image tag&gt;</code></pre>
+        <pre class="code-block"><code>$ docker run -e PORT=8000 -p 8000:8000 &lt;image name&gt;</code></pre>
 
         <p>Congratulations! You have now successfully built and run your first application with Cloud Native Buildpacks.</p>
       </section>
@@ -69,19 +69,25 @@
 
         <h3 class="mt-5">Detect</h3>
         <p>Detection process for a buildpack group consisting of an optional APM buildpack, a Node.js buildpack, and a Ruby buildpack. Many groups may be candidates for detection. If all required buildpacks in a group pass detection, the group is selected and detection ends.</p>
+        <img src="images/detect.png" alt="Detection Process" class="img-center">
 
-        <h3 class="mt-5">Analyze</h3>
+        <h3 class="mt-5 pt-4">Analyze</h3>
         <p>If an existing image is present, metadata about the last build is recovered from the config layer. During the build step, buildpacks may choose to keep, replace, or delete individual directories based on the metadata. These directories are stored as layers.</p>
+        <img src="images/analyze.png" alt="Analyze Process" class="img-center">
 
-        <h3 class="mt-5">Build</h3>
+        <h3 class="mt-5 pt-4">Build</h3>
         <p>Each buildpack examines layer metadata from the previous build, re-generates any layer directories that need to be replaced, and updates metadata (if necessary). Buildpacks may choose to modify the app source directory. A transparent, inter-build cache may be used to improve performance and provide other buildpacks with build-time dependencies.</p>
+        <img src="images/build.png" alt="Build Process" class="img-center">
 
-        <h3 class="mt-5">Export</h3>
+        <h3 class="mt-5 pt-4">Export</h3>
         <p>The remote app layer and any re-generated buildpack layers are replaced. The config layer is updated with new metadata. This process uses image layer rebasing, which can be accomplished remotely against a Docker v2 registry.</p>
+        <img src="images/export.png" alt="Export Process" class="img-center">
 
+        <h3 class="mt-5 pt-4">Security Vulnerability Patching</h3>
         <p>When CVEs hit, certain image layers can be patched without changing app behavior. These layers can be rebased en-mass using remote image layer rebasing on recent Docker registries. This is a metadata change that requires minimal data transfer.</p>
 
         <p>Using this technique, CVEs in dependencies with strong compatibility guarantees (e.g., patches to OpenSSL, patches to the JVM) can be mitigated rapidly for many apps.</p>
+        <img src="images/cve.png" alt="Security Patching" class="img-center">
 
 
       </section>
