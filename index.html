@@ -73,7 +73,7 @@
 
         <h3 class="mt-5 pt-4">Analyze</h3>
         <p>If an existing image is present, metadata about the last build is recovered from the config layer. During the build step, buildpacks may choose to keep, replace, or delete individual directories based on the metadata. These directories are stored as layers.</p>
-        <img src="website/images/analyze.png" alt="Analyze Process" class="img-center">
+        <img src="images/analyze.png" alt="Analyze Process" class="img-center">
 
         <h3 class="mt-5 pt-4">Build</h3>
         <p>Each buildpack examines layer metadata from the previous build, re-generates any layer directories that need to be replaced, and updates metadata (if necessary). Buildpacks may choose to modify the app source directory. A transparent, inter-build cache may be used to improve performance and provide other buildpacks with build-time dependencies.</p>
