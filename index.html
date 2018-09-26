@@ -22,15 +22,30 @@
     <title>Cloud Native Buildpacks</title>
   </head>
   <body>
-    <header class="py-5">
-      <div class="container">
-        <h1 class="display-3 text-center text-primary">Cloud Native Buildpacks</h1>
-      </div>
+    <header>
+      <a href="/" class="logo"><img src="/images/buildpacks-logo.svg" alt="Buildpacks.io Logo"></a>
+      <nav>
+        <input type="checkbox" id="mobile-nav-toggle">
+        <label for="mobile-nav-toggle">&#9776;</label>
+        <ul>
+          <li><a href="#">Get Started</a></li>
+          <li><a href="#" class="github-button icon-button bg-brand-blue button">GitHub</a></li>
+        </ul>
+      </nav>
+
     </header>
+    <div class="inset-grey-container">
+      <section class="container hero">
+        <h1><span class="text-brand-pink">Buildpacks</span> are pluggable, modular tools that translate source code into container-ready artifacts such as OCI images.</h1>
+        <p class="button-holder">
+          <a href="#" class="bg-brand-pink button">Learn More</a>
+          <a href="#">Read the Announcement</a>
+        </p>
+      </section>
+    </div>
     <div class="container">
-      <section class="pt-5">
-        <h2 class="mb-3">What are Buildpacks?</h2>
-        <p>Buildpacks are pluggable, modular tools that translate source code into container-ready artifacts such as OCI images. They replace Dockerfiles in the app development lifecycle with a higher level of abstraction.</p>
+      <section class="py-5">
+        <p>Buildpacks replace Dockerfiles in the app development lifecycle with a higher level of abstraction.</p>
 
         <p>Buildpacks:</p>
         <ul>
