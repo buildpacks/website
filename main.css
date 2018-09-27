@@ -23,6 +23,8 @@ Blue: #4A5696
 Blue Text: #343A63
 Light Blue Text: #5D67A5
 
+List Blue Text: #1F3996
+
 **********************************/
 
 .text-brand-pink {
@@ -64,7 +66,7 @@ body {
 
 .container {
   max-width: 960px;
-  padding: 0 20px;
+  padding: 0 30px;
 }
 
 .inset-grey-container {
@@ -156,16 +158,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 30px;
 }
 
 header .logo img {
   width: auto;
   min-width: 160px;
-}
-
-.button.github-button::before {
-  background-image: url('/images/github-mark.svg');
 }
 
 @media (min-width: 768px) {
@@ -245,18 +243,23 @@ b, strong {
   font-style: 700;
 }
 
+h1, h2, h3 {
+  color: #4A5696;
+  padding-bottom: .5rem;
+}
+
 h1, .h1 {
   font-size: 1.8rem;
 }
 
 h2, .h2 {
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h3, .h3 {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @media (min-width: 768px) {
@@ -265,7 +268,7 @@ h3, .h3 {
   }
 
   h2, .h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   h3, .h3 {
@@ -279,12 +282,66 @@ Content
 
 **********************************/
 
+.content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+@media (min-width: 576px) {
+  .content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+/**** text ****/
+
+.content h2 {
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.content h2::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 40%;
+  height: 2px;
+  background-color: #4A5696;
+}
+
+.text-note {
+  background-color: #EEEEEE;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: .9rem;
+  line-height: 180%;
+}
+
+.text-note h3 {
+  color: inherit;
+  font-size: inherit;
+  text-transform: uppercase;
+}
+
+/**** buttons ****/
+
 .button {
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
   display: inline-block;
   text-decoration: none;
+  line-height: 130%;
 }
 
 a.button:hover {
@@ -295,6 +352,8 @@ a.button:hover {
 
 .icon-button {
   display: flex;
+  width: fit-content;
+  padding-right: 25px; /* makes them look more even to have more right padding */
 }
 
 .icon-button::before {
@@ -304,23 +363,61 @@ a.button:hover {
   margin: 0 10px 0 0;
   height: 20px;
   width: 20px;
+  min-width: 20px; /* so on other sizes, it never shrinks */
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.button.github-button::before {
+  background-image: url('/images/github-mark.svg');
+}
+
+.button.download-button::before {
+  background-image: url('/images/download-icon.svg');
+}
+
+/**** lists ****/
+
+.content ul {
+  list-style-type: none;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.content li {
+  border-left: 1px solid #DDDFED;
+  color: #1F3996;
+  margin-bottom: 10px;
+  padding-left: 20px;
 }
 
 pre code, .text-note {
   color: #777;
 }
 
+/**** code ****/
+
+/* one line code */
 code.highlight {
-  color: #3e63e5;
   font-weight: 600;
   background-color: #eee;
+  padding: 5px 10px;
+  font-family: monospace;
+  font-size: 1rem;
+  color: inherit;
 }
 
+/* multi-line code */
 .code-block {
-  border: 1px solid #c4c4c4;
+  background-color: white;
+  border: 1px solid #f0f0f0;
   border-radius: .25rem;
-  padding: 10px 25px 8px 25px;
-  margin-left: 15px;
+  padding: 15px 20px;
+}
+
+/* command line code (inludes an not-selectable $ at the beginning) */
+.command-line::before {
+  content: '$';
+  color: #ccc;
+  margin-right: 15px;
 }
