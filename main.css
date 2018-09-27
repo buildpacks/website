@@ -96,7 +96,9 @@ header #mobile-nav-toggle ~ label {
 }
 
 header #mobile-nav-toggle:checked ~ label ~ ul {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header ul {
@@ -115,6 +117,10 @@ header ul {
 
 header li {
   margin: 10px 0;
+  flex: 1;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
 /**** desktop nav ****/
@@ -381,13 +387,13 @@ a.button:hover {
 
 .content ul {
   list-style-type: none;
-  margin: 0 0 10px 0;
+  margin: 0 0 30px 0;
   padding: 0;
 }
 
 .content li {
   border-left: 1px solid #DDDFED;
-  color: #8388AA;
+  color: #898EAA;
   margin-bottom: 10px;
   padding-left: 20px;
 }
@@ -472,6 +478,7 @@ Footer
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: .9rem;
+  font-weight: 300;
 }
 
 .sub-footer p {
@@ -486,7 +493,7 @@ Footer
 }
 
 .sub-footer li {
-  margin: 0 10px;
+  margin: 10px 0;
 }
 
 /* the bullets between lis */
