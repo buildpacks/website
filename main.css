@@ -59,7 +59,7 @@ Layout
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  color: #1A2759;
+  color: #495272;
   font-weight: 400;
   font-size: 1.1rem;
 }
@@ -195,6 +195,7 @@ Hero
 }
 
 .hero h1 {
+  color: #1A2759;
   font-weight: 600;
   max-width: 580px;
   margin: 0 auto 20px;
@@ -243,7 +244,7 @@ b, strong {
   font-style: 700;
 }
 
-h1, h2, h3 {
+h2, h3 {
   color: #4A5696;
   padding-bottom: .5rem;
 }
@@ -386,7 +387,7 @@ a.button:hover {
 
 .content li {
   border-left: 1px solid #DDDFED;
-  color: #1F3996;
+  color: #8388AA;
   margin-bottom: 10px;
   padding-left: 20px;
 }
