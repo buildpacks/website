@@ -18,7 +18,9 @@ img {
 COLORS 
 
 Pink: #DF0A6B
-Blue: #4A5696
+Blue: #242960
+
+Blue Button: #47529E;
 
 Blue Text: #343A63
 Light Blue Text: #5D67A5
@@ -32,15 +34,11 @@ List Blue Text: #1F3996
 }
 
 .text-brand-blue {
-  color: #4A5696;
+  color: #242960;
 }
 
 .text-blue {
   color: #343A63;
-}
-
-.text-light-blue {
-  color: #5D67A5;
 }
 
 .bg-brand-pink {
@@ -48,7 +46,7 @@ List Blue Text: #1F3996
 }
 
 .bg-brand-blue {
-  background-color: #4A5696;
+  background-color: #47529E;
 }
 
 /**********************************
@@ -59,7 +57,7 @@ Layout
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  color: #495272;
+  color: #242960;
   font-weight: 400;
   font-size: 1.1rem;
 }
@@ -122,6 +120,7 @@ Hero
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0;
 }
 
 .hero .button {
@@ -161,7 +160,7 @@ b, strong {
 }
 
 h2, h3 {
-  color: #4A5696;
+  color: #242960;
   padding-bottom: .5rem;
 }
 
@@ -233,7 +232,7 @@ Content
   content: '';
   width: 40%;
   height: 2px;
-  background-color: #4A5696;
+  background-color: #242960;
 }
 
 .text-note {
@@ -302,8 +301,8 @@ a.button:hover {
 }
 
 .content li {
-  border-left: 1px solid #DDDFED;
-  color: #898EAA;
+  border-left: 1px solid #D1D4E7;
+  color: #47529E;
   margin-bottom: 10px;
   padding-left: 20px;
 }
