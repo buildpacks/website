@@ -238,10 +238,11 @@ Typography
 a {
   text-decoration: underline;
   color: inherit;
+  transition: opacity 0.1s;
 }
 
 a:hover {
-  opacity: .8;
+  opacity: .7;
   color: inherit;
 }
 
@@ -477,7 +478,7 @@ Footer
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: .9rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .sub-footer p {
@@ -508,5 +509,17 @@ Footer
 
   .sub-footer li {
     margin: 0;
+  }
+}
+
+/**********************************
+
+Bootstrap grid
+
+**********************************/
+
+@media (min-width: 768px) {
+  .col-sm *:last-child {
+    margin-bottom: 0;
   }
 }
