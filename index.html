@@ -38,7 +38,7 @@
 
     <div class="inset-grey-container">
       <section class="container hero">
-        <h1><span class="text-brand-pink">Buildpacks</span> are pluggable, modular tools that translate source code into container-ready artifacts such as OCI images.</h1>
+        <h1><span class="text-brand-pink">Buildpacks</span> are pluggable, modular tools that translate source code into OCI images.</h1>
         <p class="button-holder">
           <a href="#learn-more" class="bg-brand-pink button">Learn More</a>
           <a href="#">Read the Announcement</a>
@@ -47,24 +47,26 @@
     </div>
 
     <div id="learn-more" class="container content">
-      <section class="row">
-        <div class="col-sm">
-          <p>Buildpacks replace Dockerfiles in the app development lifecycle with a higher level of abstraction.</p>
+        <h2>What Are Buildpacks?</h2>
 
-          <p>Buildpacks:</p>
+        <section class="row">
+        <div class="col-sm">
+          <p>Buildpacks provide a higher-level abstraction for building apps compared to Dockerfiles.</p>
+
+          <p>Specifically, they</p>
           <ul>
             <li>Provide a balance of control that reduces the operational burden on developers and supports enterprise operators who manage apps at scale.</li>
             <li>Ensure that apps meet security and compliance requirements without developer intervention.</li>
             <li>Provide automated delivery of both OS-level and application-level dependency upgrades, efficiently handling day-2 app operations that are often difficult to manage with Dockerfiles.</li>
-            <li>Rely on compatibility guarantees (such as OS package ABI-compatibility, or JVM version compatibility) to safely apply patches without rebuilding artifacts and without changing application behavior.</li>
+            <li>Rely on compatibility guarantees to safely apply patches without rebuilding artifacts and without changing application behavior.</li>
           </ul>
         </div>
         <div class="col-sm">
           <p>Buildpacks were first conceived by Heroku in 2011. Since then, they have been adopted by Cloud Foundry and other PaaS such as Gitlab, Knative, Deis, Dokku, and Drie.</p>
 
-          <p><b>Cloud Native Buildpacks</b> are a new effort initiated by Pivotal and Heroku in January 2018. Cloud Native Buildpacks aim to unify the buildpack ecosystems with a platform-to-buildpack contract that is well-defined and that incorporates learnings from maintaining production-grade buildpacks for years at both Pivotal and Heroku, the largest contributors to the buildpack ecosystem.</p>
+          <p><b>Cloud Native Buildpacks</b> are a new effort initiated by Pivotal and Heroku in January 2018. Cloud Native Buildpacks aim to unify the buildpack ecosystems with a [platform-to-buildpack contract](https://github.com/buildpack/spec/blob/master/buildpack.md) that is well-defined and that incorporates learnings from maintaining production-grade buildpacks for years at both Pivotal and Heroku, the largest contributors to the buildpack ecosystem.</p>
 
-          <p>Cloud Native Buildpacks embrace modern container standards, such as the OCI image format. They take advantage of the latest capabilities of these standards, such as remote image layer rebasing on Docker API v2 registries.</p>
+          <p>Cloud Native Buildpacks embrace modern container standards, such as the OCI image format. They take advantage of the latest capabilities of these standards, such as cross-repository blob mounting and image layer "rebasing" on Docker API v2 registries.</p>
         </div>
       </section>
     </div>
@@ -92,7 +94,7 @@
 
               <p><strong>This project just started!</strong> Very few buildpacks currently support the Buildpack v3 API.</p>
 
-              <p>By default, the CLI only includes a <a href="https://github.com/buildpack/samples/tree/master/nodejs-buildpack" target="blank">single sample v3 buildpack for Node.js</a>. To address this, we plan to support both the <a href="https://devcenter.heroku.com/articles/buildpack-api" target="blank">Heroku (v2a)</a> and <a href="https://docs.cloudfoundry.org/buildpacks/understand-buildpacks.html" target="blank">Cloud Foundry (v2b)</a> buildpack APIs in the CLI as well. Until then, this CLI is only useful for developing new v3 buildpacks, and for porting existing buildpacks to the v3 API.</p>
+              <p>By default, the CLI only includes <a href="https://github.com/buildpack/samples" target="blank">sample buildpacks</a> for Node.js and Java. To address this, we are actively adding v3 support to existing buildpacks. Until then, this CLI is only useful for developing new v3 buildpacks, and for porting existing buildpacks to the v3 API.</p>
             </div>
           </div>
         </div>
@@ -110,7 +112,7 @@
         <h3 class="pt-5">Running Your Application</h3>
         <p>Now that you have successfully built your OCI image using Cloud Native Buildpacks you can run your application using the Docker CLI.</p>
 
-        <pre class="command-line code-block"><code>docker run -e PORT=8080 -p 8080:8080 &lt;image name&gt;</code></pre>
+        <pre class="command-line code-block"><code>docker run -p 8080:8080 &lt;image name&gt;</code></pre>
 
         <p>Congratulations! You have now successfully built and run your first application with Cloud Native Buildpacks.</p>
       </section>
@@ -123,7 +125,7 @@
       </div>
       <div class="bg-brand-blue">
         <div class="container sub-footer">
-          <p>Reach out to <a href="https://github.com/buildpack">Buildpacks.org</a> on GitHub to learn more.</p>
+          <p>Reach out to <a href="https://github.com/buildpack">on Github</a> to learn more.</p>
           <ul>
             <li><a href="https://twitter.com/buildpacks_io">Twitter</a> <span>&bull;</span></li>
             <!-- <li><a href="#">Facebook</a> <span>&bull;</span></li> -->
