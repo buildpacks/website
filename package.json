@@ -1,0 +1,14 @@
+{
+  "name": "buildpacks-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:buildpack/website.git",
+  "author": "Charlie Gleason <cgleason@heroku.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.24.7"
+  },
+  "scripts": {
+    "start": "browser-sync start --server --files=*"
+  }
+}
