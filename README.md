@@ -1,6 +1,6 @@
 # Buildpacks.io
 
-The website for [buildpacks.io](buildpacks.io).
+The website for [buildpacks.io](https://buildpacks.io).
 
 ## Getting started
 
